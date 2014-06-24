@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>DA9F590C-CDD5-439F-8098-8AC331F61BD0</string>
+	<key>IDESourceControlProjectName</key>
+	<string>PhotosApp</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>DBAE2E07-B4DD-4404-BDF9-7A411D05CA4F</key>
+		<string>https://github.com/sanjaykunta/PhotosApp.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>PhotosApp/PhotosApp.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>DBAE2E07-B4DD-4404-BDF9-7A411D05CA4F</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/sanjaykunta/PhotosApp.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>DBAE2E07-B4DD-4404-BDF9-7A411D05CA4F</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>DBAE2E07-B4DD-4404-BDF9-7A411D05CA4F</string>
+			<key>IDESourceControlWCCName</key>
+			<string>PhotosApp</string>
+		</dict>
+	</array>
+</dict>
+</plist>
