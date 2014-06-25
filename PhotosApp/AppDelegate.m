@@ -2,17 +2,18 @@
 //  AppDelegate.m
 //  PhotosApp
 //
-//  Created by Sampath Kumar Kunta on 6/23/14.
+//  Created by Sanjay Kumar Kunta on 6/23/14.
 //  Copyright (c) 2014 Kent State University. All rights reserved.
 //
 
 #import "AppDelegate.h"
+#import <PXAPI/PXAPI.h>
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    [PXRequest setConsumerKey:@"MFR0Z1dZKgvq7fS1s56BGDqNBSN89MAZDEz4hlI2" consumerSecret:@"pgZEWkd4hixV077MjmEus1oMOByy0SqkqkoOZ1zt"];
     return YES;
 }
 							

@@ -7,3 +7,6 @@
 # Pods/
 
 .DS_Store
+xcuserdata
+*.xccheckout
+*.xcuserstate
