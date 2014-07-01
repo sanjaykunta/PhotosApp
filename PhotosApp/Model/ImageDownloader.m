@@ -45,9 +45,7 @@
     UIImage* cachedImg = [self cachedImageForURLString:urlString];
     if (cachedImg) {
         if (completion) {
-            if (completion) {
-                completion(cachedImg, urlString);
-            }
+            completion(cachedImg, urlString);
         }
     }else{
         //Check if the image is already being downloaded. If not start downloading
