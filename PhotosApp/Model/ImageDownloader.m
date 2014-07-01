@@ -55,20 +55,18 @@
             __weak ImageDownloader* weakSelf = self;
             //Add operation to download images and save it to cache. Once completed call the completion block. 
             [self.downloadQueue addOperationWithBlock:^{
-                //as the image has completed downloading remove the url from the downloadsInProgress array
-                [weakSelf.downloadsInProgress removeObject:urlString];
                 NSData* imageData = [NSData dataWithContentsOfURL:imageURL];
+                UIImage* downloadedImage = nil;
                 if (imageData) {
                     UIImage* image = [UIImage imageWithData:imageData];
                     //save image to cache
                     [weakSelf.cache setObject:image forKey:urlString];
-                    if (completion) {
-                        completion(image, urlString);
-                    }
-                }else{
-                    if (completion) {
-                        completion(nil, urlString);
-                    }
+                    downloadedImage = image;
+                }
+                //as the image has completed downloading remove the url from the downloadsInProgress array
+                [weakSelf.downloadsInProgress removeObject:urlString];
+                if (completion) {
+                    completion(downloadedImage, urlString);
                 }
             }];
         }
