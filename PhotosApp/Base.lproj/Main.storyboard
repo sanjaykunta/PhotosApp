@@ -104,8 +104,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="activityIndicator" destination="Qr8-2s-8g2" id="egg-UX-7xk"/>
+                        <outlet property="activityIndicatorHolderView" destination="bof-0d-OKr" id="p6F-Z6-bvU"/>
                         <outlet property="imagesTableView" destination="sFh-cs-g4B" id="uGE-7f-U4d"/>
-                        <outlet property="progressView" destination="bof-0d-OKr" id="HoV-uJ-5pX"/>
                         <segue destination="6lt-VL-dQi" kind="modal" identifier="FullImageSegueIdentifier" animates="NO" id="5ZH-oa-TxD"/>
                     </connections>
                 </viewController>

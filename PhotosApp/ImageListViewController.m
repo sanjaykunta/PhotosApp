@@ -21,7 +21,7 @@
     UIImageView* transitionImageView;
 }
 @property (nonatomic, weak) IBOutlet UITableView* imagesTableView;
-@property (nonatomic, weak) IBOutlet UIView* progressView;
+@property (nonatomic, weak) IBOutlet UIView* activityIndicatorHolderView;
 @property (nonatomic, weak) IBOutlet UIActivityIndicatorView* activityIndicator;
 @property (nonatomic, strong) ImageDownloader* imgDownloader;
 @property (nonatomic, copy) NSArray* images;
@@ -35,6 +35,7 @@
 {
     [super viewDidLoad];
     
+    _activityIndicatorHolderView.backgroundColor = [[UIColor lightGrayColor] colorWithAlphaComponent:0.5];
     _imgDownloader = [[ImageDownloader alloc] init];
     [self fetchPopularImages];
 }
@@ -56,12 +57,12 @@
 }
 
 - (void)search500PXWithSearchTerm:(NSString*)searchTerm{
-    _progressView.hidden = NO;
-    _progressView.alpha = 0.0f;
+    _activityIndicatorHolderView.hidden = NO;
+    _activityIndicatorHolderView.alpha = 0.0f;
     [_activityIndicator startAnimating];
     __weak ImageListViewController* weakSelf = self;
     [UIView animateWithDuration:0.3 animations:^{
-        weakSelf.progressView.alpha = 1.0f;
+        weakSelf.activityIndicatorHolderView.alpha = 1.0f;
     }];
     [PXImageFetcher fetchImagesForSearchTerm: searchTerm completion:^(NSArray *images, NSError *error) {
         [weakSelf updateTableViewWithImages:images error:error];
@@ -69,12 +70,12 @@
 }
 
 - (void)fetchPopularImages{
-    _progressView.hidden = NO;
-    _progressView.alpha = 0.0f;
+    _activityIndicatorHolderView.hidden = NO;
+    _activityIndicatorHolderView.alpha = 0.0f;
     [_activityIndicator startAnimating];
     __weak ImageListViewController* weakSelf = self;
     [UIView animateWithDuration:0.3 animations:^{
-        weakSelf.progressView.alpha = 1.0f;
+        weakSelf.activityIndicatorHolderView.alpha = 1.0f;
     }];
     [PXImageFetcher fetchPopularPhotosWithCompletion:^(NSArray *images, NSError *error) {
         [weakSelf updateTableViewWithImages:images error:error];
@@ -85,9 +86,9 @@
     __weak ImageListViewController* weakSelf = self;
     dispatch_async(dispatch_get_main_queue(), ^{
         [UIView animateWithDuration:0.3 animations:^{
-            weakSelf.progressView.alpha = 0.0f;
+            weakSelf.activityIndicatorHolderView.alpha = 0.0f;
         } completion:^(BOOL finished) {
-            weakSelf.progressView.hidden = YES;
+            weakSelf.activityIndicatorHolderView.hidden = YES;
             [weakSelf.activityIndicator stopAnimating];
         }];
     });
