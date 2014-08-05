@@ -5,46 +5,34 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>DA9F590C-CDD5-439F-8098-8AC331F61BD0</string>
+	<string>B5E8A998-E32D-4916-B681-A11613D096CA</string>
 	<key>IDESourceControlProjectName</key>
 	<string>PhotosApp</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>9976E263-39CE-4159-AB4D-C95A34893AE6</key>
-		<string>git://github.com/500px/500px-iOS-api.git</string>
-		<key>DBAE2E07-B4DD-4404-BDF9-7A411D05CA4F</key>
-		<string>https://github.com/sanjaykunta/PhotosApp.git</string>
+		<key>A7EEBB69-E874-4B47-83F8-907625E821B3</key>
+		<string>https://github.com/sanjaykunta/PhotosApp</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>PhotosApp/PhotosApp.xcodeproj/project.xcworkspace</string>
+	<string>PhotosApp.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>9976E263-39CE-4159-AB4D-C95A34893AE6</key>
-		<string>../../500px-iOS-api</string>
-		<key>DBAE2E07-B4DD-4404-BDF9-7A411D05CA4F</key>
-		<string>../../..</string>
+		<key>A7EEBB69-E874-4B47-83F8-907625E821B3</key>
+		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/sanjaykunta/PhotosApp.git</string>
+	<string>https://github.com/sanjaykunta/PhotosApp</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>DBAE2E07-B4DD-4404-BDF9-7A411D05CA4F</string>
+	<string>A7EEBB69-E874-4B47-83F8-907625E821B3</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>9976E263-39CE-4159-AB4D-C95A34893AE6</string>
-			<key>IDESourceControlWCCName</key>
-			<string>500px-iOS-api</string>
-		</dict>
-		<dict>
-			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
-			<string>public.vcs.git</string>
-			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>DBAE2E07-B4DD-4404-BDF9-7A411D05CA4F</string>
+			<string>A7EEBB69-E874-4B47-83F8-907625E821B3</string>
 			<key>IDESourceControlWCCName</key>
 			<string>PhotosApp</string>
 		</dict>

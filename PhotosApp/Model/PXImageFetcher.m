@@ -8,8 +8,10 @@
 
 #import "PXImageFetcher.h"
 #import <PXAPI/PXAPI.h>
-#import "PXImage.h"
-#import "PXUser.h"
+#import "Image.h"
+#import "User.h"
+#import "AppDelegate.h"
+@import CoreData;
 
 @implementation PXImageFetcher
 
@@ -32,41 +34,62 @@
 + (void)parseResults:(NSError *)error completion:(PXImageFetcherCompletion)completion results:(NSDictionary *)results {
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
     if (results) {
-        //parse results in background queue
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             NSArray* photos = results[@"photos"];
-            NSMutableArray* images = [NSMutableArray arrayWithCapacity:photos.count];
             for (NSDictionary* photo in photos) {
-                PXImage* image = [[PXImage alloc] init];
-                image.imageId = photo[@"id"];
-                image.name = photo[@"name"];
-                image.rating = photo[@"rating"];
-                image.votesCount = photo[@"votes_count"];
+                
+                AppDelegate* appDelegate = [[UIApplication sharedApplication] delegate];
                 
                 NSMutableArray* urls = [NSMutableArray array];
                 for (NSArray* url in photo[@"image_url"]) {
                     [urls addObject:url];
                 }
-                image.urls = urls;
+                NSString* imageURL = urls[0];
                 
-                PXUser* user = [[PXUser alloc] init];
-                NSDictionary* userData = photo[@"user"];
-                user.fullName = userData[@"fullname"];
-                user.userId = userData[@"id"];
-                image.user = user;
+                NSFetchRequest *fetch = [[NSFetchRequest alloc]initWithEntityName:@"Image"];
+                NSPredicate *predicate = [NSPredicate predicateWithFormat:@"imageUrl == %@", imageURL];
+                [fetch setPredicate:predicate];
+                NSError* fetchError;
+                NSArray* objs = [appDelegate.context executeFetchRequest:fetch error:&fetchError];
+                if (!objs.count) {
+                    //Create Image object (nsmanagedobject)
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        
+                        Image* img = [NSEntityDescription insertNewObjectForEntityForName:@"Image" inManagedObjectContext:appDelegate.context];
+                        img.imageName = photo[@"name"];
+                        img.rating = photo[@"rating"];
+                        img.imageUrl = imageURL;
+                        //Create User object
+                        User *user = [NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:appDelegate.context];
+                        NSDictionary* userData = photo[@"user"];
+                        
+                        user.fullName = userData[@"fullName"];
+                        user.userId = userData[@"id"];
+                        
+                        //Add add image to user object
+                        [user addImagesObject:img];
+                        
+                        //save object
+                        NSError *saveError;
+                        if (![appDelegate.context save:&saveError]) {
+                            NSLog(@"Error%@",saveError);
+                        }
+                    });
+                }
                 
-                [images addObject:image];
+                
+               
+                
+                
             }
             //call the completion block on main queue
             dispatch_async(dispatch_get_main_queue(), ^{
-                completion(images, error);
+                completion(error);
             });
-        });
         
     }else{
         //call the completion block on main queue
         dispatch_async(dispatch_get_main_queue(), ^{
-            completion(nil, error);
+            completion(error);
         });
     }
 }

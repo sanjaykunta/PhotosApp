@@ -22,12 +22,13 @@
 		5CBA46ED19592F49004E97A7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5CBA46EB19592F49004E97A7 /* InfoPlist.strings */; };
 		5CBA46EF19592F49004E97A7 /* PhotosAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CBA46EE19592F49004E97A7 /* PhotosAppTests.m */; };
 		5CBA4701195932DE004E97A7 /* libPXAPI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CBA46FE1959329F004E97A7 /* libPXAPI.a */; };
-		5CBA470A19594289004E97A7 /* PXImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CBA470919594289004E97A7 /* PXImage.m */; };
-		5CBA470D19594324004E97A7 /* PXUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CBA470C19594324004E97A7 /* PXUser.m */; };
 		5CBA4711195949EA004E97A7 /* ImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CBA4710195949EA004E97A7 /* ImageTableViewCell.m */; };
 		5CBA471D195A53BD004E97A7 /* ImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CBA471A195A53BD004E97A7 /* ImageDownloader.m */; };
 		5CBA471E195A53BD004E97A7 /* PXImageFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CBA471C195A53BD004E97A7 /* PXImageFetcher.m */; };
 		5CBA4721195A53CB004E97A7 /* FullScreenImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CBA4720195A53CB004E97A7 /* FullScreenImageViewController.m */; };
+		922DA8BC198F119C00DC80C4 /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 922DA8BB198F119C00DC80C4 /* Image.m */; };
+		922DA8BF198F119D00DC80C4 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 922DA8BE198F119D00DC80C4 /* User.m */; };
+		922E6C20198F0ED9007CB98B /* PhotosApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 922E6C1E198F0ED9007CB98B /* PhotosApp.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,10 +76,6 @@
 		5CBA46EC19592F49004E97A7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5CBA46EE19592F49004E97A7 /* PhotosAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotosAppTests.m; sourceTree = "<group>"; };
 		5CBA46F81959329F004E97A7 /* PXAPI.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PXAPI.xcodeproj; path = "500px-iOS-api/PXAPI.xcodeproj"; sourceTree = "<group>"; };
-		5CBA470819594289004E97A7 /* PXImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PXImage.h; path = Model/PXImage.h; sourceTree = "<group>"; };
-		5CBA470919594289004E97A7 /* PXImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PXImage.m; path = Model/PXImage.m; sourceTree = "<group>"; };
-		5CBA470B19594324004E97A7 /* PXUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PXUser.h; path = Model/PXUser.h; sourceTree = "<group>"; };
-		5CBA470C19594324004E97A7 /* PXUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PXUser.m; path = Model/PXUser.m; sourceTree = "<group>"; };
 		5CBA470F195949EA004E97A7 /* ImageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageTableViewCell.h; sourceTree = "<group>"; };
 		5CBA4710195949EA004E97A7 /* ImageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageTableViewCell.m; sourceTree = "<group>"; };
 		5CBA4719195A53BD004E97A7 /* ImageDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageDownloader.h; path = Model/ImageDownloader.h; sourceTree = "<group>"; };
@@ -87,6 +84,11 @@
 		5CBA471C195A53BD004E97A7 /* PXImageFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PXImageFetcher.m; path = Model/PXImageFetcher.m; sourceTree = "<group>"; };
 		5CBA471F195A53CB004E97A7 /* FullScreenImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FullScreenImageViewController.h; sourceTree = "<group>"; };
 		5CBA4720195A53CB004E97A7 /* FullScreenImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FullScreenImageViewController.m; sourceTree = "<group>"; };
+		922DA8BA198F119C00DC80C4 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Image.h; path = Model/Image.h; sourceTree = "<group>"; };
+		922DA8BB198F119C00DC80C4 /* Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Image.m; path = Model/Image.m; sourceTree = "<group>"; };
+		922DA8BD198F119D00DC80C4 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = Model/User.h; sourceTree = "<group>"; };
+		922DA8BE198F119D00DC80C4 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = Model/User.m; sourceTree = "<group>"; };
+		922E6C1F198F0ED9007CB98B /* PhotosApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PhotosApp.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 		5CBA46B719592F49004E97A7 = {
 			isa = PBXGroup;
 			children = (
+				922E6C1E198F0ED9007CB98B /* PhotosApp.xcdatamodeld */,
 				5CBA46F81959329F004E97A7 /* PXAPI.xcodeproj */,
 				5CBA46C919592F49004E97A7 /* PhotosApp */,
 				5CBA46E819592F49004E97A7 /* PhotosAppTests */,
@@ -204,14 +207,14 @@
 		5CBA470719594218004E97A7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				922DA8BD198F119D00DC80C4 /* User.h */,
+				922DA8BE198F119D00DC80C4 /* User.m */,
+				922DA8BA198F119C00DC80C4 /* Image.h */,
+				922DA8BB198F119C00DC80C4 /* Image.m */,
 				5CBA4719195A53BD004E97A7 /* ImageDownloader.h */,
 				5CBA471A195A53BD004E97A7 /* ImageDownloader.m */,
 				5CBA471B195A53BD004E97A7 /* PXImageFetcher.h */,
 				5CBA471C195A53BD004E97A7 /* PXImageFetcher.m */,
-				5CBA470819594289004E97A7 /* PXImage.h */,
-				5CBA470919594289004E97A7 /* PXImage.m */,
-				5CBA470B19594324004E97A7 /* PXUser.h */,
-				5CBA470C19594324004E97A7 /* PXUser.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -345,14 +348,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				922DA8BC198F119C00DC80C4 /* Image.m in Sources */,
 				5CBA4721195A53CB004E97A7 /* FullScreenImageViewController.m in Sources */,
 				5CBA46DA19592F49004E97A7 /* ImageListViewController.m in Sources */,
 				5CBA4711195949EA004E97A7 /* ImageTableViewCell.m in Sources */,
 				5CBA46D419592F49004E97A7 /* AppDelegate.m in Sources */,
 				5CBA46D019592F49004E97A7 /* main.m in Sources */,
-				5CBA470A19594289004E97A7 /* PXImage.m in Sources */,
 				5CBA471D195A53BD004E97A7 /* ImageDownloader.m in Sources */,
-				5CBA470D19594324004E97A7 /* PXUser.m in Sources */,
+				922DA8BF198F119D00DC80C4 /* User.m in Sources */,
+				922E6C20198F0ED9007CB98B /* PhotosApp.xcdatamodeld in Sources */,
 				5CBA471E195A53BD004E97A7 /* PXImageFetcher.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -582,6 +586,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		922E6C1E198F0ED9007CB98B /* PhotosApp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				922E6C1F198F0ED9007CB98B /* PhotosApp.xcdatamodel */,
+			);
+			currentVersion = 922E6C1F198F0ED9007CB98B /* PhotosApp.xcdatamodel */;
+			path = PhotosApp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 5CBA46B819592F49004E97A7 /* Project object */;
 }

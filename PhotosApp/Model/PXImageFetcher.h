@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-typedef void(^PXImageFetcherCompletion)(NSArray*, NSError*);
+typedef void(^PXImageFetcherCompletion)(NSError*);
 
 @interface PXImageFetcher : NSObject
 

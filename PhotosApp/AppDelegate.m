@@ -44,4 +44,47 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+-(NSManagedObjectContext*) context{
+    
+    if (_context != nil) {
+        return _context;
+    }
+    NSPersistentStoreCoordinator *coordinator = [self persistent];
+    if (coordinator != nil) {
+        _context = [[NSManagedObjectContext alloc]init];
+        [_context setPersistentStoreCoordinator:coordinator];
+    }
+    return _context;
+}
+
+-(NSManagedObjectModel*) model{
+    
+    if (_model != nil) {
+        return _model;
+    }
+    NSURL *modelUrl = [[NSBundle mainBundle] URLForResource:@"PhotosApp" withExtension:@"momd"];
+    _model = [[NSManagedObjectModel alloc]initWithContentsOfURL:modelUrl];
+    return _model;
+}
+
+-(NSPersistentStoreCoordinator*) persistent{
+    
+    if (_persistent != nil) {
+        return _persistent;
+    }
+    NSURL* storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"PhotosApp.sqlite"];
+    NSError* error = nil;
+    _persistent = [[NSPersistentStoreCoordinator alloc]initWithManagedObjectModel:[self model]];
+    if(![_persistent addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]){
+        NSLog(@"Unresolved error %@,%@",error,[error userInfo]);
+        abort();
+    }
+    return _persistent;
+}
+
+-(NSURL*) applicationDocumentsDirectory
+{
+    return [[[NSFileManager defaultManager]URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask]lastObject];
+}
+
 @end
